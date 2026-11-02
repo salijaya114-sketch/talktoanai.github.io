@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI GAME | A World That Thinks</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080b12;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #252b3a;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #22d3ee;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #22d3ee;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 8%;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: #22d3ee;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1;
+    margin: 25px 0;
+}
+
+h1 span {
+    color: #22d3ee;
+}
+
+.hero p {
+    color: #aab4c5;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #7c3aed, #2563eb);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px #7c3aed;
+}
+
+.ai-core {
+    width: 300px;
+    height: 300px;
+    min-width: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #22d3ee, #4338ca, #111827);
+    box-shadow: 0 0 80px #2563eb;
+    animation: float 4s ease-in-out infinite;
+    display: grid;
+    place-items: center;
+}
+
+.ai-core div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #080b12;
+    box-shadow: 0 0 30px #22d3ee;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    color: #aab4c5;
+    margin-bottom: 45px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: #111827;
+    border: 1px solid #293348;
+    padding: 30px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #22d3ee;
+    box-shadow: 0 10px 35px #0008;
+}
+
+.card .icon {
+    font-size: 35px;
+}
+
+.card h3 {
+    margin: 20px 0 10px;
+}
+
+.card p {
+    color: #aab4c5;
+    line-height: 1.6;
+}
+
+.about {
+    background: #0e1421;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: 20px auto;
+    color: #aab4c5;
+    line-height: 1.8;
+}
+
+.play {
+    text-align: center;
+    background: linear-gradient(120deg, #171033, #101b35);
+    border: 1px solid #493c80;
+    border-radius: 20px;
+    padding: 65px 20px;
+}
+
+.play h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.play p {
+    color: #aab4c5;
+    margin-bottom: 30px;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #8491a5;
+    border-top: 1px solid #252b3a;
+}
+
+@media(max-width: 800px) {
+    nav {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ai-core {
+        width: 230px;
+        height: 230px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AI<span>GAME</span></div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#play">Play</a>
+    </div>
+</nav>
+
+<div class="hero">
+
+    <div class="hero-text">
+        <div class="tag">THE NEXT GENERATION OF GAMING</div>
+
+        <h1>
+            A WORLD THAT
+            <span>THINKS.</span>
+        </h1>
+
+        <p>
+            Enter an AI-powered game world where characters
+            can think, talk, react, explore and interact with
+            players. Your actions create new experiences.
+        </p>
+
+        <a href="#play" class="btn">DISCOVER THE GAME →</a>
+    </div>
+
+    <div class="ai-core">
+        <div></div>
+    </div>
+
+</div>
+
+<section class="about" id="about">
+
+    <h2 class="section-title">More Than A Normal Game</h2>
+
+    <p>
+        AI GAME is an experience built around intelligent
+        characters and an interactive environment.
+        Instead of simply following fixed scripts, AI
+        characters can respond to conversations and
+        react to events happening around them.
+    </p>
+
+</section>
+
+<section id="features">
+
+    <h2 class="section-title">GAME FEATURES</h2>
+
+    <p class="section-description">
+        Discover what makes this AI-powered experience different.
+    </p>
+
+    <div class="features">
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Intelligent AI</h3>
+            <p>
+                Meet AI characters that can understand
+                conversations and generate responses.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💬</div>
+            <h3>Real Conversations</h3>
+            <p>
+                Talk naturally with characters instead
+                of choosing from fixed dialogue options.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👁️</div>
+            <h3>World Awareness</h3>
+            <p>
+                Characters can observe their surroundings
+                and react to nearby objects and players.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚠️</div>
+            <h3>Danger Detection</h3>
+            <p>
+                AI characters can recognize hazards
+                and respond to dangerous situations.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎭</div>
+            <h3>Unique Personalities</h3>
+            <p>
+                Characters can have different moods,
+                personalities, opinions and behaviours.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌎</div>
+            <h3>Living World</h3>
+            <p>
+                Explore an environment where AI
+                interactions make every moment interesting.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="play">
+
+    <div class="play">
+
+        <h2>READY TO ENTER THE AI WORLD?</h2>
+
+        <p>
+            Meet intelligent characters.
+            Explore the world. Discover what's possible.
+        </p>
+
+        <!-- Replace this URL with your actual game link -->
+        <a
+            href="https://www.roblox.com/"
+            target="_blank"
+            class="btn">
+            PLAY AI GAME NOW →
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 AI GAME. All Rights Reserved.
+    <br>
+    Powered by AI.
+</footer>
+
+</body>
+</html>
